@@ -1,5 +1,5 @@
 function FooterComponent() {
-  return <h1>Я есть футер</h1>;
+  return <h1>Я есть футерр</h1>;
 }
 
 export default FooterComponent;
