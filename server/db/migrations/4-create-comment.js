@@ -1,4 +1,4 @@
-'use strict';
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -21,6 +21,16 @@ module.exports = {
           key: 'id'
         },
        
+        onDelete: 'CASCADE'
+      },
+      candidateId: {
+        type: Sequelize.INTEGER,
+
+        references: {
+          model: 'Candidates',
+          key: 'id'
+        },
+
         onDelete: 'CASCADE'
       },
       createdAt: {
