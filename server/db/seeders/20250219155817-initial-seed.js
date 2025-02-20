@@ -40,7 +40,7 @@ module.exports = {
         experience: 5,
         resume: 'path/to/resume.pdf',
         status: 'new',
-        vacancyId: 1,
+       
       },
       {
         fullName: 'Jane Smith',
@@ -49,7 +49,7 @@ module.exports = {
         experience: 3,
         resume: 'path/to/resume2.pdf',
         status: 'invited',
-        vacancyId: 2,
+       
       },
     ]);
     await queryInterface.bulkInsert('Comments', [
