@@ -15,7 +15,7 @@ function HeaderComponent() {
           fontSize: '30px',
           color: 'white',
           textDecoration: 'none',
-          marginRight: '20px',
+          marginRight: '30px',
         }}
       >
         Войти
