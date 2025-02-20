@@ -3,6 +3,8 @@ import Layout from './components/Layout';
 import SigninPage from './components/pages/SigninPage';
 import SignupPage from './components/pages/SignupPage';
 import SigninCandidatePage from './components/pages/SigninCandidatePage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   return (
     <Routes>
