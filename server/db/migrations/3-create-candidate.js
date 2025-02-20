@@ -30,11 +30,13 @@ module.exports = {
 
         allowNull: false,
       },
+     
 
       resume: {
         type: Sequelize.STRING,
         allowNull: true,
       },
+     
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

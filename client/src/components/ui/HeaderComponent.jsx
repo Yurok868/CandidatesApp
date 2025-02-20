@@ -1,8 +1,14 @@
+<<<<<<< HEAD
+=======
 import { Link } from 'react-router';
+>>>>>>> dev
 import styles from './HeaderComponent.module.css';
 function HeaderComponent() {
   return (
     <div className={styles.header}>
+<<<<<<< HEAD
+      <h1 className={styles.headerText}>Кадровое агентство QuickSort</h1>
+=======
       <img
         src="../../../public/logoQ.webp"
         alt="Логотип"
@@ -20,6 +26,7 @@ function HeaderComponent() {
       >
         Войти
       </Link>
+>>>>>>> dev
     </div>
   );
 }

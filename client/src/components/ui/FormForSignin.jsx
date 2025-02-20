@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+export default function FormForSignin() {
+  return <div>FormForSрапыораоignin!!!!dsggfsdgsf!!!!!!!!!</div>
+=======
 import './styles/form.css';
 import { Form, Button } from 'react-bootstrap';
 
@@ -34,4 +38,5 @@ export default function FormForSignin({ formData, handleChange }) {
       </Form>
     </div>
   );
+>>>>>>> dev
 }
