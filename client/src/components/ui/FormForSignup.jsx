@@ -1,52 +1,35 @@
+import axiosInstance from '../../api/axiosInstance';
 import './styles/form.css';
 import { Form, Button } from 'react-bootstrap';
 
-export default function FormForSignup({ formData, handleChange }) {
+export default function FormForSignup() {
+  const Hadler = async function (e) {
+    const data = Object.fromEntries(new FormData(e.target));
+    const res = await axiosInstance.post('/auth/signup', data);
+    console.log(res);
+  };
   return (
     <div className="form-container">
-      <Form className="form-content">
+      <Form
+        className="form-content"
+        onSubmit={(e) => {
+          e.preventDefault();
+          Hadler(e);
+        }}
+      >
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Имя</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-          />
+          <Form.Control type="text" placeholder="Имя" name="name" />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Почта</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-          />
+          <Form.Control type="text" placeholder="Почта" name="email" />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Пароль</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </Form.Group>
-
-        <Form.Group className="mb-3" controlId="formBasicRepitePassword">
-          <Form.Label>Повторите пароль</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Repite password"
-            name="repitePassword"
-            value={formData.repitePassword}
-            onChange={handleChange}
-          />
+          <Form.Control type="text" placeholder="Пароль" name="password" />
         </Form.Group>
 
         <Button variant="primary" type="submit">

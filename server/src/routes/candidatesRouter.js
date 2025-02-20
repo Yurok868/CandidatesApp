@@ -2,7 +2,7 @@ const express = require('express');
 const { Candidate } = require('../../db/models');
 const { verifyAccessToken } = require('../middlewares/verifyTokens');
 const candidatesRouter = express.Router();
-candidatesRouter.get('/', verifyAccessToken, async (req, res) => {
+candidatesRouter.get('/', async (req, res) => {
   try {
     const candidates = await Candidate.findAll();
     res.json(candidates);

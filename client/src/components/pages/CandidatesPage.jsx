@@ -1,5 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axiosInstance from '../../api/axiosInstance';
+import { Link } from 'react-router';
 
 export default function CandidatesPage() {
-  return <div>CandidatesPage</div>;
+  const [candidate, setCandidate] = useState([]);
+  useEffect(() => {
+    axiosInstance.get('/candidates').then(({ data }) => setCandidate(data));
+  }, []);
+
+  console.log(candidate);
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+      {candidate.map((el) => (
+        <div style={{ marginTop: '20px' }} key={el.id}>
+          <p style={{ backgroundColor: 'grey' }}>Имя: {el.fullName}</p>
+          <p>Почта: {el.email}</p>
+          <p>Телефон: {el.phone}</p>
+          <img src={el.photo} style={{height: '300px', width: '400px'}}/>
+          {/* <button onSubmit={}></button> */}
+        </div>
+      ))}
+    </div>
+  );
 }
