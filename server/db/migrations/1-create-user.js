@@ -1,4 +1,4 @@
-'use strict';
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -23,7 +23,7 @@ module.exports = {
         allowNull: false
       },
       role: {
-        type: Sequelize.ENUM('superAdmin','hr'),
+        type: Sequelize.STRING,
         allowNull: false,
        
       },
