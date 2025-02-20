@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import FormForCandidate from '../ui/FormForCandidate';
-
-export default function SigninCandidatePage() {
-  return <FormForCandidate />;
-=======
 import React from 'react';
 import FormForCandidate from '../ui/FormForCandidate';
 
@@ -18,5 +12,4 @@ export default function SigninCandidatePage() {
   };
 
   return <FormForCandidate onSubmit={handleSubmit} />;
->>>>>>> dev
 }

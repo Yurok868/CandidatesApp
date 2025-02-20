@@ -1,9 +1,6 @@
 import FormForSignup from '../ui/FormForSignup';
-<<<<<<< HEAD
-=======
 import { useState } from 'react';
 
->>>>>>> dev
 function SignupPage() {
   const [newHR, setNewHR] = useState();
 
