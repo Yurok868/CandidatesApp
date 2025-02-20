@@ -1,25 +1,7 @@
 import './styles/form.css';
 import { Form, Button } from 'react-bootstrap';
-import { useState } from 'react';
 
-export default function FormForSignup() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    repitePassword: '',
-  });
-
-  console.log(formData);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
+export default function FormForSignup({ formData, handleChange }) {
   return (
     <div className="form-container">
       <Form className="form-content">
@@ -61,14 +43,14 @@ export default function FormForSignup() {
           <Form.Control
             type="text"
             placeholder="Repite password"
-            name="repitPassword"
+            name="repitePassword"
             value={formData.repitePassword}
             onChange={handleChange}
           />
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Отправить
+          Зарегистрировать
         </Button>
       </Form>
     </div>

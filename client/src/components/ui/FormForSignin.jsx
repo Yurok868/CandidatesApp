@@ -1,23 +1,8 @@
 import './styles/form.css';
 import { Form, Button } from 'react-bootstrap';
-import { useState } from 'react';
 
-export default function FormForSignin() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
 
-  console.log(formData);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
+export default function FormForSignin({ formData, handleChange }) {
   return (
     <div className="form-container">
       <Form className="form-content">
