@@ -1,5 +1,6 @@
 import FormForSignin from '../ui/FormForSignin';
 import { useState } from 'react';
+import axiosInstance from '../../axiosInstance';
 
 function SigninPage() {
   const [admin, setAdmin] = useState();
@@ -20,7 +21,7 @@ function SigninPage() {
   const loginHandler = async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target));
-    const res = await axiosInstance.post('/auth/signin', data);
+    const res = await axiosInstance.post('/auth/login', data);
     setAdmin(res.data);
     setAccessToken(res.data.accessToken);
   };

@@ -1,10 +1,10 @@
 import './styles/form.css';
 import { Form, Button } from 'react-bootstrap';
 
-export default function FormForSignup({ formData, handleChange }) {
+export default function FormForSignup({ formData, handleChange, signupHandler }) {
   return (
-    <div className="form-container">
-      <Form className="form-content">
+    <div className="form-container" >
+      <Form className="form-content" onSubmit={signupHandler}>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Имя</Form.Label>
           <Form.Control

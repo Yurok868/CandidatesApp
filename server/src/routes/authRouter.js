@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const { User } = require('../../db/models');
 const generateTokens = require('../utils/generateTokens');
 const cookieConfig = require('../configs/cookie.config');
+
 authRouter.post('/signup', async (req, res) => {
   const { email, name, password } = req.body;
   if (!email || !name || !password) {
@@ -11,7 +12,7 @@ authRouter.post('/signup', async (req, res) => {
   try {
     const [user, created] = await User.findOrCreate({
       where: { email },
-      defaults: { name, password: await bcrypt.hash(password, 10) },
+      defaults: { name, password: await bcrypt.hash(password, 10), role: 'hr' },
     });
     if (!created) {
       return res.status(400).json({ error: 'User already exists' });

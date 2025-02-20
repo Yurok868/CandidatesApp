@@ -2,10 +2,10 @@ import './styles/form.css';
 import { Form, Button } from 'react-bootstrap';
 
 
-export default function FormForSignin({ formData, handleChange }) {
+export default function FormForSignin({ formData, handleChange, loginHandler}) {
   return (
-    <div className="form-container">
-      <Form className="form-content">
+    <div className="form-container" >
+      <Form className="form-content" onSubmit={loginHandler}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Почта</Form.Label>
           <Form.Control

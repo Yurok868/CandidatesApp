@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import styles from './HeaderComponent.module.css';
-function HeaderComponent() {
+
+function HeaderComponent({ admin }) {
   return (
     <div className={styles.header}>
       <img
@@ -18,6 +19,7 @@ function HeaderComponent() {
           marginRight: '20px',
         }}
       >
+        <p>{admin?.id ? `Привет, ${admin.name}`: ''}</p>
         Войти
       </Link>
     </div>
