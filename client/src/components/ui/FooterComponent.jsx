@@ -1,5 +1,11 @@
+import styles from './Footer.module.css';
+
 function FooterComponent() {
-  return <h1>Я есть футерр</h1>;
+  return (
+    <div className={styles.foot}>
+      <p>Создано при поддержки @БобёрКампани</p>
+    </div>
+  );
 }
 
 export default FooterComponent;

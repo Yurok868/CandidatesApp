@@ -2,12 +2,12 @@
   background-color: rgb(56, 54, 54);
   height: 90px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   color: white;
   align-items: center;
+  
 }
 
 .headerText {
   margin-top: 10px;
-  background-color: rgb(56, 54, 54);
 }
