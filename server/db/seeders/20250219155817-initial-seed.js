@@ -34,23 +34,63 @@ module.exports = {
     ]);
     await queryInterface.bulkInsert('Candidates', [
       {
-        fullName: 'John Doe',
-        email: 'johndoe@example.com',
+        fullName: 'John Bates',
+        email: 'johnbates@example.com',
         phone: '123456789',
         experience: 5,
-        resume: 'path/to/resume.pdf',
+        resume: 'https://i.pinimg.com/736x/63/57/49/635749e283f6fa869163500c02e0d68b.jpg',
         status: 'new',
+       
        
       },
       {
-        fullName: 'Jane Smith',
-        email: 'janesmith@example.com',
+        fullName: 'Michael Levinson',
+        email: 'michael@example.com',
         phone: '987654321',
         experience: 3,
-        resume: 'path/to/resume2.pdf',
+        resume: 'https://cdn-blog.novoresume.com/articles/software-engineer-resume/software-engineer-resume-sample.png',
         status: 'invited',
        
       },
+     
+      {
+        fullName: 'Alexa Ray',
+        email: 'alexa@example.com',
+        phone: '123456789',
+        experience: 6,
+        resume: 'https://www.resumego.net/wp-content/uploads/Wordpress-Developer-Resume.png',
+        status: 'invited',
+       
+       
+      },
+      {
+        fullName: 'Alan Doe',
+        email: 'alan@example.com',
+        phone: '9870154321',
+        experience: 4,
+        resume: 'https://xuluwarrior.github.io/jsonresume-theme-orbit/resume.jpg',
+        status: 'techinterview',
+
+      },
+      {
+        fullName: 'Dwight Kavanagh ',
+        email: 'dwight@example.com',
+        phone: '9870154321',
+        experience: 4,
+        resume: 'https://i.pinimg.com/originals/d5/d2/d7/d5d2d761b23813b8296c8d94ea61840c.jpg',
+        status: 'techinterview',
+
+      },
+      {
+        fullName: 'Justin Nathan ',
+        email: 'justin@example.com',
+        phone: '9870154321',
+        experience: 3,
+        resume: 'https://resumekraft.com/wp-content/uploads/2023/09/Net-Developer-Resume-Example.jpg',
+        status: 'techinterview',
+
+      },
+
     ]);
     await queryInterface.bulkInsert('Comments', [
       { userId: 1, text: 'Strong candidate, good for interview' },
