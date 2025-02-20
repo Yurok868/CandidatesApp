@@ -1,18 +1,10 @@
-<<<<<<< HEAD
-import React from 'react'
-
-export default function FormForCandidate() {
-  return (
-    <div>FormForCandidate</div>
-  )
-=======
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 import './FormForCandidate.css';
 
 export default function FormForCandidate({ onSubmit }) {
   return (
-    <div className="form-container">
+    <div className="form-container">gfsg
       <Form className="form-content" onSubmit={onSubmit}>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>ФИО</Form.Label>
@@ -55,5 +47,4 @@ export default function FormForCandidate({ onSubmit }) {
       </Form>
     </div>
   );
->>>>>>> dev
 }
