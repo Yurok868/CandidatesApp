@@ -4,7 +4,7 @@ import './FormForCandidate.css';
 
 export default function FormForCandidate({ onSubmit }) {
   return (
-    <div className="form-container">gfsg
+    <div className="form-container">
       <Form className="form-content" onSubmit={onSubmit}>
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>ФИО</Form.Label>
