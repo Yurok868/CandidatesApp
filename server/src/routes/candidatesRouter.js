@@ -11,7 +11,7 @@ candidatesRouter.get('/', async (req, res) => {
     res.status(500).json({ error: 'Ошибка получения данных' });
   }
 });
-candidatesRouter.post('/', verifyAccessToken, async (req, res) => {
+candidatesRouter.post('/', async (req, res) => {
   try {
     const { fullName, email, phone, experience, status, resume } = req.body;
     if (!fullName || !email || !phone || !experience || !status || !resume) {
