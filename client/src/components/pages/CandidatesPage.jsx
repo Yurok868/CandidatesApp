@@ -17,8 +17,12 @@ export default function CandidatesPage() {
           <p style={{ backgroundColor: 'grey' }}>Имя: {el.fullName}</p>
           <p>Почта: {el.email}</p>
           <p>Телефон: {el.phone}</p>
-          <img src={el.photo} style={{height: '300px', width: '400px'}}/>
-          {/* <button onSubmit={}></button> */}
+          <img src={el.photo} style={{ height: '300px', width: '400px' }} />
+          {/* <button onSubmit={()=>{
+            
+            ax.get('')
+            setCandidate({...candidate, candidate.filter((can)=> can.id === el.id)status})
+            }}></button> */}
         </div>
       ))}
     </div>

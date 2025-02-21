@@ -39,7 +39,7 @@ module.exports = {
         phone: '123456789',
         experience: 5,
         resume: 'https://i.pinimg.com/736x/63/57/49/635749e283f6fa869163500c02e0d68b.jpg',
-        status: 'new',
+        status: 'invited',
         photo:
           'https://i.pinimg.com/originals/0f/15/08/0f1508eebb6961733a607892725d7e04.jpg',
       },

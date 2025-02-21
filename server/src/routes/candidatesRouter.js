@@ -53,7 +53,7 @@ candidatesRouter.delete('/:candidateId', verifyAccessToken, async (req,res)=>{
     res.status(500).json({ error: 'Ошибка удаления данных' });
   }
 });  
-candidatesRouter.patch('/:candidateId', verifyAccessToken, async (req, res) => {
+candidatesRouter.patch('/:candidateId', async (req, res) => {
     try {
       const { candidateId } = req.params;
       const { status } = req.body;
