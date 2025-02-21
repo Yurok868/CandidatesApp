@@ -13,8 +13,8 @@ candidatesRouter.get('/', async (req, res) => {
 });
 candidatesRouter.post('/', async (req, res) => {
   try {
-    const { fullName, email, phone, experience, status, resume } = req.body;
-    if (!fullName || !email || !phone || !experience || !status || !resume) {
+    const { fullName, email, phone, experience, status, resume, photo } = req.body;
+    if (!fullName || !email || !phone || !experience || !status || !resume || !photo) {
       res.status(400).send('Ошибка клиента');
     }
     const newCandidate = await Candidate.create({
@@ -24,8 +24,7 @@ candidatesRouter.post('/', async (req, res) => {
       experience,
       status,
       resume,
-
-    
+      photo,
     });
     res.status(201).json(newCandidate);
   } catch (err) {
@@ -33,8 +32,8 @@ candidatesRouter.post('/', async (req, res) => {
     res.status(500).json({ error: 'Ошибка создания данных' });
   }
 });
-candidatesRouter.delete('/:candidateId', verifyAccessToken, async (req,res)=>{
-    try{
+candidatesRouter.delete('/:candidateId', verifyAccessToken, async (req, res) => {
+  try {
     const { candidateId } = req.params;
 
     if (!candidateId) {
@@ -43,7 +42,7 @@ candidatesRouter.delete('/:candidateId', verifyAccessToken, async (req,res)=>{
 
     const deletedCandidate = await Candidate.destroy({ where: { id: candidateId } });
 
-    if (!deletedCandidate ) {
+    if (!deletedCandidate) {
       return res.status(404).json({ message: 'Кандидат не найден' });
     }
 
@@ -52,26 +51,29 @@ candidatesRouter.delete('/:candidateId', verifyAccessToken, async (req,res)=>{
     console.log(err);
     res.status(500).json({ error: 'Ошибка удаления данных' });
   }
-});  
+});
 candidatesRouter.patch('/:candidateId', async (req, res) => {
-    try {
-      const { candidateId } = req.params;
-      const { status } = req.body;
-  
-      if (!candidateId || !status) {
-        return res.status(400).json({ message: 'Требуются параметры' });
-      }
-  const candidate = await Candidate.findOne({ where: { id: candidateId } });
-      const updatedCandidate = await candidate.update({ status }, { where: { id: candidateId } });
-  
-      if (!updatedCandidate) {
-        return res.status(404).json({ message: 'Кандидат не найден' });
-      }
-  
-      return res.sendStatus(200);
-    } catch (err) {
-      console.log(err);
-      res.status(500).json({ error: 'Ошибка обновления статуса' });
+  try {
+    const { candidateId } = req.params;
+    const { status } = req.body;
+
+    if (!candidateId || !status) {
+      return res.status(400).json({ message: 'Требуются параметры' });
     }
-  });
-  module.exports =candidatesRouter
+    const candidate = await Candidate.findOne({ where: { id: candidateId } });
+    const updatedCandidate = await candidate.update(
+      { status },
+      { where: { id: candidateId } },
+    );
+
+    if (!updatedCandidate) {
+      return res.status(404).json({ message: 'Кандидат не найден' });
+    }
+
+    return res.sendStatus(200);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: 'Ошибка обновления статуса' });
+  }
+});
+module.exports = candidatesRouter;
