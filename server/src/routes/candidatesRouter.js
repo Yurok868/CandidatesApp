@@ -11,10 +11,10 @@ candidatesRouter.get('/', async (req, res) => {
     res.status(500).json({ error: 'Ошибка получения данных' });
   }
 });
-candidatesRouter.post('/', verifyAccessToken, async (req, res) => {
+candidatesRouter.post('/', async (req, res) => {
   try {
-    const { fullName, email, phone, experience, status, resume } = req.body;
-    if (!fullName || !email || !phone || !experience || !status || !resume) {
+    const { fullName, email, phone, experience, status, resume, photo} = req.body;
+    if (!fullName || !email || !phone || !experience || !status || !resume || !photo) {
       res.status(400).send('Ошибка клиента');
     }
     const newCandidate = await Candidate.create({
@@ -24,7 +24,7 @@ candidatesRouter.post('/', verifyAccessToken, async (req, res) => {
       experience,
       status,
       resume,
-
+      photo,
     
     });
     res.status(201).json(newCandidate);
