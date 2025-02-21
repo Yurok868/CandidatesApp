@@ -18,7 +18,7 @@ export default function CandidatesFilterPage() {
         }),
       ),
     );
-  }, []);
+  }, [param.filter]);
 
   const handleChangeStatus = (id, newStatus) => {
     console.log(id);

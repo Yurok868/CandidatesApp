@@ -10,6 +10,8 @@ import InfoPage from './components/pages/InfoPage';
 import CandidatesPage from './components/pages/CandidatesPage';
 import axiosInstance from './api/axiosInstance';
 import CandidatesFilterPage from './components/pages/CandidatesFilterPage';
+import NotFoundPage from './components/pages/NotFoundPage';
+import HelpPages from './components/pages/HelpPages';
 function App() {
   const [user, setUser] = useState(null);
 
@@ -30,7 +32,9 @@ function App() {
         <Route path="/signin" element={<SigninPage setUser={setUser} />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signupCandidate" element={<SigninCandidatePage />} />
+        {/* <Route path="/help" element={<HelpPages />} /> */}
       </Route>
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }

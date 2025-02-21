@@ -28,6 +28,7 @@ function HeaderComponent({ user, setUser }) {
           alt="Логотип"
           style={{ width: '150px', height: '90px' }}
         />
+        <a href='/help'>Чат помощи</a>
         <h1 className={styles.headerText}>Кадровое агентство QuickSort</h1>
         {user ? (
           <div onClick={logoutHandler}>
@@ -59,8 +60,8 @@ function HeaderComponent({ user, setUser }) {
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
         {statusArr.map((el) => (
-          <a
-            href={`/candidates/${el[0]}`}
+          <Link
+            to={`/candidates/${el[0]}`}
             style={{ textDecoration: 'none', color: 'inherit' }}
           >
             <div
@@ -75,7 +76,7 @@ function HeaderComponent({ user, setUser }) {
             >
               <p>{el[1]} </p>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
       <div
