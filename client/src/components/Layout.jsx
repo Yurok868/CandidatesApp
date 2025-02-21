@@ -3,13 +3,10 @@ import FooterComponent from './ui/FooterComponent';
 import { Outlet } from 'react-router';
 import { useState } from 'react';
 
-export default function Layout() {
-  const [user, setUser] = useState(null);
-
-  // useEffect(() => axiosInstance.get('/refresh'), []);
+export default function Layout({ user, setUser }) {
   return (
     <>
-      <HeaderComponent />
+      <HeaderComponent user={user} setUser={setUser} />
       <Outlet />
     </>
   );

@@ -34,67 +34,89 @@ module.exports = {
     ]);
     await queryInterface.bulkInsert('Candidates', [
       {
-        fullName: 'John Bates',
-        email: 'johnbates@example.com',
-        phone: '123456789',
+        id: 1,
+        fullName: 'Иван Иванов',
+        email: 'ivan.ivanov@example.com',
+        phone: '+7 (999) 123-45-67',
         experience: 5,
-        resume: 'https://i.pinimg.com/736x/63/57/49/635749e283f6fa869163500c02e0d68b.jpg',
         status: 'invited',
+        resume: 'JavaScript',
         photo:
-          'https://i.pinimg.com/originals/0f/15/08/0f1508eebb6961733a607892725d7e04.jpg',
+          'https://avatars.mds.yandex.net/i?id=6fb8fb16bf3b006a3d88df5571e0338f5363a27f-5268626-images-thumbs&n=13',
       },
       {
-        fullName: 'Michael Levinson',
-        email: 'michael@example.com',
-        phone: '987654321',
+        id: 2,
+        fullName: 'Мария Петрова',
+        email: 'maria.petrova@example.com',
+        phone: '+7 (999) 987-65-43',
         experience: 3,
-        resume:
-          'https://cdn-blog.novoresume.com/articles/software-engineer-resume/software-engineer-resume-sample.png',
+        status: 'techinterview',
+        resume: 'Управление проектами',
+        photo:
+          'https://avatars.mds.yandex.net/i?id=6fb8fb16bf3b006a3d88df5571e0338f5363a27f-5268626-images-thumbs&n=13',
+      },
+      {
+        id: 3,
+        fullName: 'Алексей Смирнов',
+        email: 'alexey.smirnov@example.com',
+        phone: '+7 (999) 555-55-55',
+        experience: 4,
         status: 'invited',
         photo:
           'https://avatars.mds.yandex.net/i?id=6fb8fb16bf3b006a3d88df5571e0338f5363a27f-5268626-images-thumbs&n=13',
       },
-
       {
-        fullName: 'Alexa Ray',
-        email: 'alexa@example.com',
-        phone: '123456789',
+        id: 4,
+        fullName: 'Светлана Кузнецова',
+        email: 'svetlana.kuznetsova@example.com',
+        phone: '+7 (999) 321-45-67',
+        experience: 5,
+        status: 'worked',
+        resume: 'SQL',
+        photo:
+          'https://avatars.mds.yandex.net/i?id=6fb8fb16bf3b006a3d88df5571e0338f5363a27f-5268626-images-thumbs&n=13',
+      },
+      {
+        id: 5,
+        fullName: 'Дмитрий Федоров',
+        email: 'dmitry.fedorov@example.com',
+        phone: '+7 (999) 654-32-10',
+        experience: 3,
+        status: 'techinterview',
+        resume: 'Linux',
+        photo:
+          'https://avatars.mds.yandex.net/i?id=6fb8fb16bf3b006a3d88df5571e0338f5363a27f-5268626-images-thumbs&n=13',
+      },
+      {
+        id: 6,
+        fullName: 'Анна Сергеева',
+        email: 'anna.sergeeva@example.com',
+        phone: '+7 (999) 111-22-33',
+        experience: 4,
+        status: 'worked',
+        resume: 'SEO',
+        photo:
+          'https://avatars.mds.yandex.net/i?id=6fb8fb16bf3b006a3d88df5571e0338f5363a27f-5268626-images-thumbs&n=13',
+      },
+      {
+        id: 7,
+        fullName: 'Ольга Васильева',
+        email: 'olga.vasilieva@example.com',
+        phone: '+7 (999) 222-33-44',
         experience: 6,
-        resume:
-          'https://www.resumego.net/wp-content/uploads/Wordpress-Developer-Resume.png',
+        status: 'worked',
+        resume: 'Копирайтинг',
+        photo:
+          'https://avatars.mds.yandex.net/i?id=6fb8fb16bf3b006a3d88df5571e0338f5363a27f-5268626-images-thumbs&n=13',
+      },
+      {
+        id: 8,
+        fullName: 'Николай Сидоров',
+        email: 'nikolai.sidorov@example.com',
+        phone: '+7 (999) 333-44-55',
+        experience: 4,
         status: 'invited',
-        photo:
-          'https://avatars.mds.yandex.net/i?id=6fb8fb16bf3b006a3d88df5571e0338f5363a27f-5268626-images-thumbs&n=13',
-      },
-      {
-        fullName: 'Alan Doe',
-        email: 'alan@example.com',
-        phone: '9870154321',
-        experience: 4,
-        resume: 'https://xuluwarrior.github.io/jsonresume-theme-orbit/resume.jpg',
-        status: 'techinterview',
-        photo:
-          'https://avatars.mds.yandex.net/i?id=6fb8fb16bf3b006a3d88df5571e0338f5363a27f-5268626-images-thumbs&n=13',
-      },
-      {
-        fullName: 'Dwight Kavanagh ',
-        email: 'dwight@example.com',
-        phone: '9870154321',
-        experience: 4,
-        resume:
-          'https://i.pinimg.com/originals/d5/d2/d7/d5d2d761b23813b8296c8d94ea61840c.jpg',
-        status: 'techinterview',
-        photo:
-          'https://avatars.mds.yandex.net/i?id=6fb8fb16bf3b006a3d88df5571e0338f5363a27f-5268626-images-thumbs&n=13',
-      },
-      {
-        fullName: 'Justin Nathan ',
-        email: 'justin@example.com',
-        phone: '9870154321',
-        experience: 3,
-        resume:
-          'https://resumekraft.com/wp-content/uploads/2023/09/Net-Developer-Resume-Example.jpg',
-        status: 'techinterview',
+        resume: 'Копирайтинг',
         photo:
           'https://avatars.mds.yandex.net/i?id=6fb8fb16bf3b006a3d88df5571e0338f5363a27f-5268626-images-thumbs&n=13',
       },

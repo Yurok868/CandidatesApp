@@ -22,7 +22,7 @@ candidatesRouter.post('/', async (req, res) => {
       email,
       phone,
       experience,
-      status,
+      status: 'Новенький',
       resume,
       photo,
     });

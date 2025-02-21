@@ -11,19 +11,26 @@ import CandidatesPage from './components/pages/CandidatesPage';
 import axiosInstance from './api/axiosInstance';
 import CandidatesFilterPage from './components/pages/CandidatesFilterPage';
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(
+    () =>
+      axiosInstance.get('/tokens/refresh').then(({ data }) => {
+        setUser(data.user);
+      }),
+    [],
+  );
 
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<Layout user={user} setUser={setUser} />}>
         <Route path="/" element={<InfoPage />} />
         {/* <Route path="/candidates" element={<CandidatesPage />} /> */}
         <Route path="/candidates/:filter" element={<CandidatesFilterPage />} />
-        <Route path="/signin" element={<SigninPage />} />
+        <Route path="/signin" element={<SigninPage setUser={setUser} />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/signinCandidate" element={<SigninCandidatePage />} />
-
+        <Route path="/signupCandidate" element={<SigninCandidatePage />} />
       </Route>
-
     </Routes>
   );
 }

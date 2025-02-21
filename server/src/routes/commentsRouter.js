@@ -18,6 +18,8 @@ commentsRouter.post('/', verifyAccessToken, checkAutor,async (req,res)=>{
     
 })
 
+com
+
 commentsRouter.delete('/:commentId',verifyAccessToken,checkAutor,async(req,res) =>{
     try{ 
         const { commentId } = req.params;

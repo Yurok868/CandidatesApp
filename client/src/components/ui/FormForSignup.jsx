@@ -9,9 +9,9 @@ export default function FormForSignup() {
     console.log(res);
   };
   return (
-    <div className="form-container">
+    <div  style={{margin: '10px', display: 'flex', justifyContent: 'center'}}>
       <Form
-        className="form-content"
+        className="form-content" style={{padding: '10px'}}
         onSubmit={(e) => {
           e.preventDefault();
           Hadler(e);
